@@ -27,6 +27,11 @@ resource "aws_subnet" "PublicSubnet" {
 }
 }
 
+# This is a comment explaining what the resource does
+resource "aws_instance" "example" {
+  ami           = "ami-0c55b159cbfafe1f0"
+  instance_type = "t2.micro"
+}
 resource "aws_route_table_association" "PublicRTassociation" {
 subnet_id = aws_subnet.PublicSubnet.id
 route_table-id = aws_route_table.PublicRT.id
